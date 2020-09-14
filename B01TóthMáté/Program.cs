@@ -9,8 +9,10 @@ namespace B01TóthMáté
 {
     class Program
     {
+        int[] tömb = new int[1000];
         static void Main(string[] args)
         {
+            Console.ReadKey();
         }
     }
 }
