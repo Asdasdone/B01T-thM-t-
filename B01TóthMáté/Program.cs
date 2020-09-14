@@ -21,9 +21,25 @@ namespace B01TóthMáté
             }
             ol.Close();
         }
+        static int minimumertek()
+        {
+            int min = tömb[0];
+            for (int i = 1; i < tömb.Length; i++)
+            {
+                if (tömb[i]<min)
+                {
+                    min = tömb[i];
+                }
+            }
+            return min;
+        }
+       
+        }
         static void Main(string[] args)
         {
             beolvasas();
+            Console.WriteLine("A minimum: {0}", minimumertek());
+            
             Console.ReadKey();
         }
     }
