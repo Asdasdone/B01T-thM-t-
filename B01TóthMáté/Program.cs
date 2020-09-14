@@ -33,13 +33,26 @@ namespace B01TóthMáté
             }
             return min;
         }
-       
+        static int Egyediek()
+        {
+            StreamWriter ir = new StreamWriter("egyediek.txt");
+            int e = 0;
+            for (int i = 0; i < tömb.Length; i++)
+            {
+                if (tömb[i] % 5 == 0 && tömb[i] % 4 != 0)
+                {
+                    e++;
+                    ir.WriteLine(tömb[i]);
+                }
+            }
+            ir.Close();
+            return e;
         }
         static void Main(string[] args)
         {
             beolvasas();
             Console.WriteLine("A minimum: {0}", minimumertek());
-            
+            Console.WriteLine("5 osztható de 4 nem oszthatóak száma: {0}", Egyediek());
             Console.ReadKey();
         }
     }
