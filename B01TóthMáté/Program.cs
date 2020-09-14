@@ -9,9 +9,21 @@ namespace B01TóthMáté
 {
     class Program
     {
-        int[] tömb = new int[1000];
+        static int[] tömb = new int[1000];
+        static void beolvasas()
+        {
+            StreamReader ol = new StreamReader("adatok.dat");
+            int i = 0;
+            while (!ol.EndOfStream)
+            {
+                tömb[i] = int.Parse(ol.ReadLine())*3;
+                i++;
+            }
+            ol.Close();
+        }
         static void Main(string[] args)
         {
+            beolvasas();
             Console.ReadKey();
         }
     }
